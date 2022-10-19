@@ -35,7 +35,7 @@ export const view = {
         el_messages.innerHTML = ''
         messages.forEach(({data, from})=>{
             el_messages.innerHTML += `<p>
-                <span title="PeerId: ${from}">${nicks[from] || "Anom" + (from === 'you' ? ' (you!)' : '')}</span>: ${data}
+                <span title="PeerId: ${from}">${(nicks[from] || "Anom") + (from === 'you' ? ' (you!)' : '')}</span>: ${data}
             </p>`
         })
 
