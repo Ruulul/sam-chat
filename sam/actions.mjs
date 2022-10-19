@@ -13,7 +13,7 @@ export const actions = {
     async enterRoom (room) {
         model.propose({
             connecting: {
-                to: ['pubsub://', room, '?format="json"'].join(''),
+                to: ['pubsub://', room, '?format=json'].join(''),
                 events: {
                     onopen: actions.send("awareness"),
                     onmessage: actions.receive,
