@@ -1,0 +1,47 @@
+<style>
+    @import url("agregore://theme/style.css");  
+    * {
+        width: 20em;
+        margin: auto;
+    }
+    form {
+        display: flex;
+        flex-flow: column;
+    }
+</style>
+
+<title>
+    V142857 Pubsub Test - SAM Pattern
+</title>
+
+<div id="app">
+    <span class='connection-status'></span>
+    <form onsubmit="return enterRoom(event)">
+        <input name="room">
+        <input type="submit" value="Enter room">
+    </form>
+    <div class="messages">
+
+    </div>
+    <div class="inputs">
+        <form onsubmit="return sendMessage(event)">
+            <textarea name="message"></textarea>
+            <input type="submit" value="Send mesage">
+        </form>
+        <form onsubmit="return changeNick(event)">
+            <input name="nick">
+            <input type="submit" value="Change nick">
+        </form>
+    </div>
+    <div>
+        <ul class="online">
+
+        </ul>
+    </div>
+</div>
+
+<script type="module">
+    import { init } from "./index.mjs"
+
+    init(document.getElementById("app"))
+</script>
