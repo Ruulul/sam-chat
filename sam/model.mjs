@@ -21,6 +21,7 @@ export const model = {
             changed = true
         }
         if (awareness) {
+            this.nicks[awareness.from] = awareness.data
             this.online.push(awareness.from)
             setTimeout(()=>{
                 this.online = this.online.filter(id=>id!==awareness.from)

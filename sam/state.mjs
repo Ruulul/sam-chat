@@ -7,8 +7,8 @@ export const state = {
         queueMicrotask(()=>this.nap(model));
         view.render(model);
     },
-    nap ({connected}) {
-        if (connected) setTimeout(actions.send("awareness"), 1000);
+    nap ({connected, nicks}) {
+        if (connected) setTimeout(()=>actions.send("awareness")(nicks['you']), 1000);
         return true;
     },
 }
